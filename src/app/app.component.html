@@ -1,0 +1,26 @@
+<nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+  <a class="navbar-brand" routerLink="">HOME</a>
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item">
+        <a routerLinkActive="active" class="nav-link" routerLink="/cursos" [queryParams]="{pagina:1}">Cursos</a>
+      </li>
+      <li class="nav-item">
+        <a routerLinkActive="active" class="nav-link" [routerLink]="['curso',idcurso.value]">Curso com ID</a>
+      </li>
+      <li class="nav-item">
+<!--         Propriedade routerLinkActive altera o estado ativo do link -->
+        <a routerLinkActive="active" class="nav-link" routerLink="/login">Login</a>
+      </li>
+    </ul>
+  </div>
+</nav>
+
+<div class="container">
+  <p>
+    Entre com o ID do Curso
+    <input type="text" class="form-control" placeholder="id curso..." #idcurso>
+  </p>
+
+  <router-outlet></router-outlet>
+</div>
